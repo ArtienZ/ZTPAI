@@ -1,1 +1,1 @@
-# ZTPAI
+# ZTPAI Projekt semestralny
