@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+        <script src="{{ asset('https://kit.fontawesome.com/34d5627880.js') }}" crossorigin="anonymous"></script>
+    {% endblock %}
+    <meta charset="UTF-8">
+    <title>Terapeuci</title>
+</head>
+<body>
+<div class="base-container">
+    <header>
+        <img class="logo" src="{{ asset('img/logo.svg') }}" alt="logo">
+        <nav>
+
+            <ul class = "menu">
+
+                <li>
+                    <a href="kids" class="nav-button">DZIECI</a>
+                </li>
+                <li>
+                    <a href="therapists" class="nav-button">TERAPEUCI</a>
+                </li>
+                <li>
+                    <a href="exercises" class="nav-button">ZADANIA</a>
+                </li>
+                <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="search-bar">
+            <p>SZUKAJ:</p>
+            <input placeholder="Imie i nazwisko">
+            <form>
+                <ul>
+                    <li><a href="#">DODAJ TERAPEUTE</a> </li>
+                </ul>
+            </form>
+        </div>
+        <div class="therapist_list">
+            <ul>
+                <li><a href="#" class="therapist_button"><img src="{{ asset('img/01.jpg') }}">Therapist 1</a></li>
+                <li><a href="#" class="therapist_button"><img src="{{ asset('img/02.jpg') }}">Therapist 2</a></li>
+                <li><a href="#" class="therapist_button"><img src="{{ asset('img/03.jpg') }}">Therapist 3</a></li>
+                <li><a href="#" class="therapist_button"><img src="{{ asset('img/04.jpg') }}">Therapist 4</a></li>
+                <li><a href="#" class="therapist_button"><img src="{{ asset('img/33.jpeg') }}">Therapist 5</a></li>
+                <li><a href="#" class="therapist_button"><img src="{{ asset('img/47.jpg') }}">Therapist 6</a></li>
+                <li><a href="#" class="therapist_button"><img src="{{ asset('img/95.jpg') }}">Therapist 7</a></li>
+                <li><a href="#" class="therapist_button"><img src="{{ asset('img/96.jpg') }}">Therapist 8</a></li>
+                <li><a href="#" class="therapist_button"><img src="{{ asset('img/47.jpg') }}">Therapist 9</a></li>
+            </ul>
+
+        </div>
+    </main>
+</div>
+</body>
+</html>

@@ -14,36 +14,39 @@ header{
     justify-content: flex-end;
     align-items: center;
     padding: 0 5%;
-    background-color: rgba(57,169,255,255);
     width: 100vw;
     font-family: "Roboto Light";
     font-size: 2em;
     color: #ffffff;
     letter-spacing: 0em;
     line-height: 0;
-    -webkit-box-shadow: 0px 7px 20px 0px rgba(48,48,48,0.65);
-    -moz-box-shadow: 0px 7px 20px 0px rgba(48,48,48,0.65);
-    box-shadow: 0px 7px 20px 0px rgba(48,48,48,0.65);
+    background: #39A9FF 0% 0% no-repeat padding-box;
+    box-shadow: 2px 5px 6px #00000029;
+    opacity: 1;
+    z-index: 3;
 }
 .logo{
     cursor: pointer;
     margin-right: auto;
     height: 80%;
-    width: auto;
 }
-.menu{
+ul{
     list-style-type: none;
-
+}
+a{
+    text-decoration: none;
 }
 .menu>li{
     display: inline-block;
-    padding: 1em;
     width: auto;
+    padding: 1em;
 }
 .menu>li>a{
     transition: all 0.3s ease 0s;
     text-decoration: none;
     color: white;
+    line-height: 100%;
+    height: 100%;
 }
 .menu>li:hover{
     transition: all 0.3s ease 0s;
@@ -61,8 +64,100 @@ header{
     transition: all 0.3s ease 0s;
 }
 main{
+    font-family: "Bookman Old Style";
     width: 100vw;
     height: 90vh;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
+}
+.search-bar{
+    width: 30%;
+    height: 90%;
+    padding: 4em;
+    display: flex;
+    flex-direction: column;
+}
+.search-bar>input{
+    background-color: white;
+    box-shadow: 0px 6px 12px #00000029;
+    border: 4px solid #39A9FF;
+    color: rgba(57,169,255,255);
+    border-radius: 2em;
+    opacity: 0.71;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 1em;
+    line-height: 3em;
+}
+.search-bar>input:focus{
+    outline: none;
+}
+.search-bar>form{
+    text-align: center;
+    margin-top:20em;
+    width: 100%;
+    height: 10%;
+}
+.search-bar a{
+    color: white;
+    background: #65BCFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 12px #00000029;
+    border-radius: 2em;
+    text-align: center;
+    line-height: 4em;
+    display: block;
+    font-size: 1.5em;
+}
+.search-bar>p{
+    text-align: center;
+    color: rgba(57,169,255,255);
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+.therapist_list{
+    width: 65%;
+    height: 90%;
+    padding: 5em 4em 5em 12em;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    overflow: auto;
+}
+.therapist_list>ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    align-items: center;
+}
+.therapist_list li{
+    margin-bottom: 2em;
+    width: 12em;
+    height: 16em;
+}
+.therapist_button{
+    background: #39A9FF 0% 0% no-repeat padding-box;
+    border-radius: 4em;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0px 6px 12px #00000029;
+    transition: all 0.3s ease 0s;
+}
+.therapist_button>img{
+    border-radius: 4em;
+    box-shadow: 0px 6px 12px #00000029;
+    min-width: 100%;
+    min-height: 70%;
+    max-height: 70%;
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+}
+.therapist_button:hover{
+    box-shadow: 0px 6px 12px rgba(57,169,255,255);
+    background-color: white;
+    color: rgba(57,169,255,255);
 }

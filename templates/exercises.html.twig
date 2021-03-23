@@ -2,11 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Exercises</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/exercises.css') }}">
+
+        <script src="{{ asset('https://kit.fontawesome.com/34d5627880.js') }}" crossorigin="anonymous"></script>
+    {% endblock %}
+    <title>Ćwiczenia</title>
 </head>
 <body>
-<h1>
-    EXERCISES PAGE
-</h1>
+<div class="base-container">
+<header>
+    <img class="logo" src="{{ asset('img/logo.svg') }}" alt="logo">
+    <nav>
+
+        <ul class = "menu">
+
+            <li>
+                <a href="kids" class="nav-button">DZIECI</a>
+            </li>
+            <li>
+                <a href="therapists" class="nav-button">TERAPEUCI</a>
+            </li>
+            <li>
+                <a href="exercises" class="nav-button">ZADANIA</a>
+            </li>
+            <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+        </ul>
+    </nav>
+</header>
+    <main>
+        <div class="file_preview"> THERE WILL BE FILE PREVIEW</div>
+        <div class="files_list">
+            <ul>
+                <li><a href="#" class="file_button">File name 1</a></li>
+                <li><a href="#" class="file_button">File name 1</a></li>
+                <li><a href="#" class="file_button">File name 1</a></li>
+                <li><a href="#" class="file_button">File name 1</a></li>
+                <li><a href="#" class="file_button">File name 1</a></li>
+                <li><a href="#" class="file_button">File name 1</a></li>
+                <li><a href="#" class="file_button">File name 1</a></li>
+                <li><a href="#" class="file_button">File name 1</a></li>
+                <li><a href="#" class="file_button">File name 1</a></li>
+                <li><a href="#" class="file_button">File name 1</a></li>
+                <li><a href="#" class="file_button">File name 1</a></li>
+                <li><a href="#" class="file_button">File name 1</a></li>
+                <li><a href="#" class="file_button">File name 1</a></li>
+                <li><a href="#" class="file_button">File name 1</a></li>
+                <li><a href="#" class="file_button">File name 1</a></li>
+            </ul>
+        </div>
+    </main>
+</div>
 </body>
+
 </html>

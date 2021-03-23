@@ -1,0 +1,48 @@
+main{
+    padding: 5em 10em 5em 10em;
+    overflow: hidden;
+}
+.file_preview{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    background: #65BCFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 6px #00000029;
+    border-radius: 20px;
+    color: white;
+}
+.files_list{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    padding: 3em;
+    padding-top: 0;
+    overflow: auto;
+
+}
+.files_list>ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+.files_list>ul>li{
+    width: auto;
+    height: 10em;
+    margin-left: 1.5em;
+    margin-bottom: 1.5em;
+
+}
+.file_button{
+    background: #A7D8FE 0% 0% no-repeat padding-box;
+    box-shadow: 0px -4px 8px #00000029;
+    transition: all 0.3s ease 0s;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: white;
+    line-height: 10em;
+}
+.file_button:hover{
+    background: #39A9FF 0% 0% no-repeat padding-box;
+}
