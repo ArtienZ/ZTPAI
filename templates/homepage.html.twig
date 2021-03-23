@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    {% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/main-page.css') }}">
+    <script src="{{ asset('https://kit.fontawesome.com/34d5627880.js') }}" crossorigin="anonymous"></script>
+    {% endblock %}
+    <meta charset="UTF-8">
+    <title>HomePage</title>
+</head>
+<body>
+<div class="base-container">
+    <header>
+        <img class="logo" src="{{ asset('img/logo.svg') }}" alt="logo">
+        <nav>
+
+            <ul class = "menu">
+
+                <li>
+                    <a href="kids" class="nav-button">DZIECI</a>
+                </li>
+                <li>
+                    <a href="therapist" class="nav-button">TERAPEUCI</a>
+                </li>
+                <li>
+                    <a href="exercises" class="nav-button">ZADANIA</a>
+                </li>
+                <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+<main>
+    <div class="cross-line"></div>
+    <div class="photo">
+        <img src="{{ asset('img/home-page-photo.svg') }}" alt="photo">
+    </div>
+    <div class="about">
+        <div class="about-text">
+        <h3>Witaj na stronie gabinetu "LOGOMOWA"</h3>
+        <p>Drogi rodzicu jesteś zainteresowany terapią dla swojego dziecka?</p>
+        <p>Twoje dziecko potrzebuje diagnozy?</p>
+        <p>Chcesz skonsultować się z logopedą?</p>
+        <p>Kliknij w przycisk poniżej i skontaktuj się z nami!</p>
+        </div>
+    </div>
+</main>
+</div>
+</body>
+</html>

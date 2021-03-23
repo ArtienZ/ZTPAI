@@ -1,0 +1,43 @@
+.photo{
+    width: 55vw;
+    height: 100%;
+    margin-left: 0;
+    position: relative;
+    left: 0;
+    overflow: hidden;
+}
+.cross-line{
+    width: 95.5%;
+    margin-left: 10em;
+    height: 0.6em;
+    background-color:rgba(57,169,255,255);
+    transform: rotate(-70deg);
+    position: absolute;
+    overflow: hidden;
+    z-index: 2;
+}
+.about{
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    z-index: 1;
+}
+.about-text{
+    width: 65%;
+    height: 70%;
+    text-align: center;
+    font-family: "Bookman Old Style";
+    font-size: 1.8em;
+    color: #39a9ff;
+    letter-spacing: 0em;
+}
+.about-text>p{
+    margin-top: 1em;
+}
+.about-text>p:last-child{
+    margin-top: 3em;
+}
