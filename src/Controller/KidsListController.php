@@ -6,12 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class LoginController extends AbstractController
+
+class KidsListController extends AbstractController
 {
     /**
-     * @Route("/login_page")
+     * @Route("/kids")
      */
-    public function login_page():Response{
-        return $this->render("login_page.html.twig");
+    public function kids(): Response{
+        return $this->render("kids_list.html.twig");
     }
 }
