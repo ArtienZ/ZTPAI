@@ -12,25 +12,7 @@
 </head>
 <body>
 <div class="base-container">
-<header>
-    <img class="logo" src="{{ asset('img/logo.svg') }}" alt="logo">
-    <nav>
-
-        <ul class = "menu">
-
-            <li>
-                <a href="kids" class="nav-button">DZIECI</a>
-            </li>
-            <li>
-                <a href="therapists" class="nav-button">TERAPEUCI</a>
-            </li>
-            <li>
-                <a href="exercises" class="nav-button">ZADANIA</a>
-            </li>
-            <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
-        </ul>
-    </nav>
-</header>
+    {% include("shared/navbar.html.twig") %}
     <main>
         <div class="file_preview"> THERE WILL BE FILE PREVIEW</div>
         <div class="files_list">

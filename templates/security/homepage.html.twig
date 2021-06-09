@@ -1,0 +1,66 @@
+<html lang="pl">
+<head>
+    {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/main-page.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/login-form.css') }}">
+        <script src="{{ asset('js/login_popout.js') }}"></script>
+        <script src="{{ asset('https://kit.fontawesome.com/34d5627880.js') }}" crossorigin="anonymous"></script>
+    {% endblock %}
+    <meta charset="UTF-8">
+    <title>LogoMowa</title>
+</head>
+<body>
+<form action="{{ path('login') }}" id="login_box_id" class="login_box" method="POST">
+
+    <div class="login_container" id="login_container_id">
+
+        {% if error %}
+            <h2>{{ error.messageKey() }}</h2>
+        {% endif %}
+        <div class="logo-container">
+            <img src="{{ asset('img/logo.svg') }}" alt="logo" class="login_logo">
+        </div>
+        <label for="uemail"><b>email</b></label>
+        <i class="fas fa-user"></i><input class="login_inputs" name="_username" type="text" value="{{ last_username }}" placeholder="LOGIN">
+        <label for="upassword"><b>hasło</b></label>
+        <i class="fas fa-lock"></i><input class="login_inputs" name="_password" type="password" placeholder="HASLO">
+        <button type="submit">ZALOGUJ</button>
+
+    </div>
+
+</form>
+
+<div class="base-container">
+    <header>
+        <img class="logo" src="{{ asset('img/logo.svg') }}" alt="logo">
+        <nav>
+
+            <ul class = "menu">
+
+                <li>
+                    <a href="javascript:LoginPopout();" class="nav-button">ZALOGUJ SIĘ</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+<main>
+
+
+    <div class="photo">
+        <img src="{{ asset('img/home-page-photo.svg') }}" alt="photo">
+    </div>
+    <div class="about">
+        <div class="about-text">
+        <h3>Witaj na stronie gabinetu "LOGOMOWA"</h3>
+        <p>Drogi rodzicu jesteś zainteresowany terapią dla swojego dziecka?</p>
+        <p>Twoje dziecko potrzebuje diagnozy?</p>
+        <p>Chcesz skonsultować się z logopedą?</p>
+        <p>Kliknij w przycisk poniżej i skontaktuj się z nami!</p>
+            <a href="#" class="contact_button">KLIKNIJ TU</a>
+        </div>
+    </div>
+</main>
+</div>
+</body>
+</html>

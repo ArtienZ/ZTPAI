@@ -10,11 +10,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
-    /**
-     * @Route("/")
-     */
-    public function homepage():Response{
-        return $this->render('homepage.html.twig');
-    }
+
 
 }

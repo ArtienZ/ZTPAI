@@ -1,0 +1,32 @@
+<header>
+    <img class="logo" src="{{ asset('img/logo.svg') }}" alt="logo">
+    <nav>
+
+        <ul class = "menu">
+
+            <li>
+                <a href="kids" class="nav-button">DZIECI</a>
+            </li>
+            <li>
+                <a href="therapists" class="nav-button">TERAPEUCI</a>
+            </li>
+            <li>
+                <a href="exercises" class="nav-button">ZADANIA</a>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <div class="dropdown-button" onclick="myFunction(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="{{ asset('my_profile') }}">Mój Profil</a>
+                        <a href="{{ asset('logout') }}">Wyloguj</a>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </nav>
+</header>

@@ -1,30 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+        <script src="{{ asset('js/menu_toggle.js') }}"></script>
+        <script src="{{ asset('https://kit.fontawesome.com/34d5627880.js') }}" crossorigin="anonymous"></script>
+
+    {% endblock %}
     <meta charset="UTF-8">
     <title>Mój Profil</title>
 </head>
 <body>
 <div class="base-container">
-    <header>
-        <img class="logo" src="{{ asset('img/logo.svg') }}" alt="logo">
-        <nav>
-
-            <ul class = "menu">
-
-                <li>
-                    <a href="kids" class="nav-button">DZIECI</a>
-                </li>
-                <li>
-                    <a href="therapists" class="nav-button">TERAPEUCI</a>
-                </li>
-                <li>
-                    <a href="exercises" class="nav-button">ZADANIA</a>
-                </li>
-                <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
-            </ul>
-        </nav>
-    </header>
+    {% include("shared/navbar.html.twig") %}
     <main>
         <h1 style="align-items: center">Witaj na swoim profilu!</h1>
     </main>

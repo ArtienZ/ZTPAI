@@ -6,12 +6,14 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Exception;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="`user`")
  */
-class User
+class User implements UserInterface,\Serializable
 {
     /**
      * @ORM\Id
@@ -31,7 +33,7 @@ class User
     private $surname;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $email;
 
@@ -180,5 +182,55 @@ class User
         }
 
         return $this;
+    }
+
+    public function getRoles()
+    {
+        // TODO: Implement getRoles() method.
+        return['ROLE_USER'];
+    }
+
+    public function getSalt()
+    {
+        // TODO: Implement getSalt() method.
+
+    }
+
+    public function getUsername()
+    {
+        return $this->getEmail();
+    }
+
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
+    public function serialize()
+    {
+       return serialize([
+           $this->id,
+           $this->name,
+           $this->surname,
+           $this->email,
+           $this->password,
+           $this->phone,
+           $this->photo,
+           $this->role
+       ]);
+    }
+
+    public function unserialize($data)
+    {
+        list(
+            $this->id,
+            $this->name,
+            $this->surname,
+            $this->email,
+            $this->password,
+            $this->phone,
+            $this->photo,
+            $this->role
+            ) = unserialize($data, ['allowed_classes'=>false]);
     }
 }
