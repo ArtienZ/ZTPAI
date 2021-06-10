@@ -1,0 +1,62 @@
+.profile-container{
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+    height: 70vh;
+    background: #65BCFF 0% 0% no-repeat padding-box;
+    margin-left: 20vw;
+    margin-top: 7vh;
+    border-radius: 1.5em;
+}
+.profile-data{
+    display: block;
+    width: 50%;
+    height: 100%;
+    padding: 3em;
+    color: white;
+    overflow: auto;
+}
+.profile-menu{
+    display: block;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+}
+.profile-data p{
+    font-size: 2em;
+    margin-top: 1em;
+}
+.profile-data li{
+    font-size: 1.3em;
+    line-height: 2em;
+    margin-left:1em ;
+}
+
+.profile-menu ul{
+    width: 100%;
+}
+.profile-menu li{
+    display: inline-block;
+    margin-top: 1.8em;
+    width: 80%;
+}
+.profile-menu-buttons{
+    width: 100%;
+    border-radius: 1em;
+    line-height:2em;
+    color: rgba(57,169,255,255);
+    background-color: white;
+    font-size: 2em;
+    display: block;
+    text-decoration: none;
+    font-family: "Roboto Light";
+    box-shadow: 0px 6px 12px rgba(57,169,255,255);
+    cursor: pointer;
+}
+.profile-menu-buttons:hover{
+    transition: all 0.3s ease 0s;
+    box-shadow: 0px 3px 8px white;
+    background-color: rgba(57,169,255,255);
+    color: white;
+}

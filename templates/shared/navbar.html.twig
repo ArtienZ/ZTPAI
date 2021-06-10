@@ -1,3 +1,7 @@
+{% block stylesheets %}
+    <script src="{{ asset('js/menu_toggle.js') }}"></script>
+{% endblock %}
+
 <header>
     <img class="logo" src="{{ asset('img/logo.svg') }}" alt="logo">
     <nav>
@@ -13,7 +17,7 @@
             <li>
                 <a href="exercises" class="nav-button">ZADANIA</a>
             </li>
-            <li>
+            <li id="menu_li">
                 <div class="dropdown">
                     <div class="dropdown-button" onclick="myFunction(this)">
                         <div class="bar1"></div>

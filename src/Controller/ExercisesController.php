@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ExercisesController extends AbstractController
 {
     /**
-     * @Route("/exercises")
+     * @Route("/exercises", name="exercises")
      */
     public function exercises(): Response{
         return $this->render("exercises.html.twig");

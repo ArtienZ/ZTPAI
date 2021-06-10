@@ -8,7 +8,7 @@
         <script src="{{ asset('https://kit.fontawesome.com/34d5627880.js') }}" crossorigin="anonymous"></script>
     {% endblock %}
     <meta charset="UTF-8">
-    <title>LogoMowa</title>
+    <title>{% block title %}LogoMowa{% endblock %}</title>
 {% endblock %}
 {% block body %}
 <form action="{{ path('login') }}" id="login_box_id" class="login_box" method="POST">

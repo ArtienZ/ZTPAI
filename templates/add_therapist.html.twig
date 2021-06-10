@@ -1,21 +1,69 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
+{% extends 'base.html.twig' %}
+{% block head %}
     {% block stylesheets %}
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
         <script src="{{ asset('https://kit.fontawesome.com/34d5627880.js') }}" crossorigin="anonymous"></script>
     {% endblock %}
     <meta charset="UTF-8">
-    <title>Dodaj Terapeute</title>
-</head>
-<body>
+    <title>{% block title %}Dodaj Terapute{% endblock %}</title>
+
+{% endblock %}
+{% block body %}
 <div class="base-container">
     {% include("shared/navbar.html.twig") %}
     <main>
-       <div class ="add-user">
-           <h1> There we can add new therapist</h1>
-       </div>
+        <div class="profile-container">
+            <div class="profile-data">
+                <form class="add-user">
+                    {#
+                    Form to add user entity
+                    #}
+                    <label>Imie:</label>
+                    <input type="text" name="user_name" placeholder="Imie">
+                    <label>Nazwisko:</label>
+                    <input type="text" name="user_surname" placeholder="Nazwisko">
+                    <label>Email:</label>
+                    <input type="email" name="user_email" placeholder="Email">
+                    <label>Hasło:</label>
+                    <input type="password" name="user_password" placeholder="Hasło" >
+                    <label>Numer telefonu:</label>
+                    <input type="text" name="user_phone" placeholder="Numer telfonu" >
+                    <label>Zdjęcie(opcjonalne)</label>
+                    <div class="button-wrap">
+                        <input type="file" id="upload-photo" name="user-photo">
+                        <label class="file-button" for="upload-photo">Prześlij zdjęcie</label>
+                    </div>
+                    {#
+                    Add Therapist
+                    #}
+                    <label>Specjalizacja</label>
+                    <input type="text" name="therapist_specialization" placeholder="Specjalizacja">
+                    <label>Numer konta:</label>
+                    <input type="text" name="therapist_account_number" placeholder="Numer konta">
+                    <label>Stawka godzinowa:</label>
+                    <input type="text" name="therapist_hourly_rate" placeholder="Stawka godzinowa(zł)">
+                    {#
+                    Add Kid
+                    #}
+                    <label>Imie rodzica:</label>
+                    <input type="text" name="kid_parent_name" placeholder="Imie">
+                    <label>Nazwisko rodzica:</label>
+                    <input type="text" name="kid_parent_surname" placeholder="Nazwisko">
+                    <label>Teraputa:</label>
+                    <select form="add-kid-f" name="kid_therapist">
+                        <option value="Therapist 1">Therapist 1</option>
+                        <option value="Therapist 2">Therapist 2</option>
+                        <option value="Therapist 3">Therapist 3</option>
+                    </select>
+                    <label>Diagnoza:</label>
+                    <div class="button-wrap">
+                        <input type="file" id="upload-diag" name="kid-diagnosis">
+                        <label class="file-button" for="upload-diag">Prześlij plik</label>
+                    </div>
+                </form>
+            </div>
+        </div>
     </main>
 </div>
-</body>
-</html>
+{% endblock %}

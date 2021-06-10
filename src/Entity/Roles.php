@@ -7,9 +7,10 @@ use App\Repository\RolesRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @ApiResource()
  * @ORM\Entity(repositoryClass=RolesRepository::class)
  */
-#[ApiResource]
+
 class Roles
 {
     /**

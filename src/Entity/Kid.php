@@ -7,9 +7,9 @@ use App\Repository\KidRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @ApiResource()
  * @ORM\Entity(repositoryClass=KidRepository::class)
  */
-#[ApiResource]
 class Kid
 {
     /**

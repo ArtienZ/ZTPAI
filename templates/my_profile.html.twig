@@ -1,21 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends 'base.html.twig' %}
+{% block head %}
     {% block stylesheets %}
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-        <script src="{{ asset('js/menu_toggle.js') }}"></script>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
         <script src="{{ asset('https://kit.fontawesome.com/34d5627880.js') }}" crossorigin="anonymous"></script>
-
     {% endblock %}
     <meta charset="UTF-8">
-    <title>Mój Profil</title>
-</head>
-<body>
+    <title>{% block title %}Mój profil{% endblock %}</title>
+{% endblock %}
+{% block body %}
 <div class="base-container">
     {% include("shared/navbar.html.twig") %}
     <main>
-        <h1 style="align-items: center">Witaj na swoim profilu!</h1>
+        <div class="profile-container">
+            <div class="profile-data">
+                {#
+                Profile data for Kid
+                #}
+      {#              <ul>
+                        <p>Dane personalne:</p>
+                        <li>
+                            Imie i nazwisko:<br>
+                        </li>
+                        <li>
+                            Wiek: <br>
+                        </li>
+                        <p>Dane rodzica: </p>
+                        <li>
+                            Imie i nazwisko:<br>
+
+                        </li>
+                        <li>
+                            Tel.kontaktowy:<br>
+
+                        </li>
+                        <li>
+                            E-mail:<br>
+
+                        </li>
+
+                    </ul>#}
+
+                {#
+                Profile data for Therapist
+                #}
+                <ul>
+                    <p>Dane personalne:</p>
+                    <li>
+                        <b>Imie i nazwisko:</b><br>
+                        imie i nazw
+                    </li>
+                    <li>
+                        <b>Tel.kontaktowy:</b><br>
+                        tel jakis
+                    </li>
+                    <li>
+                        <b>E-mail:</b><br>
+                        emailjakis
+                    </li>
+                    <li>
+                        <b>Specjalizacja:</b><br>
+                        Specjal
+                    </li>
+                    <p>Dane rozliczeniowe: </p>
+                    <li><b>Numer konta:</b><br> Numer</li>
+                    <li><b>Stawka godzinowa</b><br> Stawka</li>
+                </ul>
+
+
+            </div>
+            <div class="profile-menu">
+
+                <ul>
+                    {#
+                    Profile Menu For Therapist
+                    #}
+                    <li>
+                        <a href="{{ asset('exercises')}}" class="profile-menu-buttons">MOJE ZADANIA</a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" rel="nofollow" class="profile-menu-buttons">GRAFIK</a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile-menu-buttons">MOJE DZIECI</a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile-menu-buttons">HISTORIA WYPŁAT</a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile-menu-buttons">PROŚBY URLOPOWE I L4</a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile-menu-buttons">EDYTUJ PROFIL</a>
+                    </li>
+                    {#
+                        Kid Profile Menu/ For Therapist
+                    #}
+{#                    <li>#}
+{#                        <a href="#" class="profile-menu-buttons" download>DIAGNOZA</a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#" class="profile-menu-buttons">TERAPEUTA</a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#" class="profile-menu-buttons">ZOBACZ GRAFIK</a>#}
+{#                    </li>#}
+
+                    {#
+                    Available for ADMIN
+                    #}
+                    <li>
+                        <form method="POST" action="delete_user">
+                            <input type="hidden" name="userEmail"/>
+                            <button class="profile-menu-buttons" type="submit">USUŃ PACJENTA</button>
+                        </form>
+                    </li>
+
+{#                    <li>#}
+{#                        <form method="POST" action="delete_user">#}
+{#                            <input type="hidden" name="userEmail"/>#}
+{#                            <button class="profile-menu-buttons" type="submit">USUŃ PACJENTA</button>#}
+{#                        </form>#}
+{#                    </li>#}
+                </ul>
+            </div>
+
+        </div>
     </main>
 </div>
-</body>
-</html>
+{% endblock %}

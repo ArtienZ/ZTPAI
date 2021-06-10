@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends 'base.html.twig' %}
+{% block head %}
     <meta charset="UTF-8">
     {% block stylesheets %}
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/exercises.css') }}">
-
         <script src="{{ asset('https://kit.fontawesome.com/34d5627880.js') }}" crossorigin="anonymous"></script>
     {% endblock %}
-    <title>Ćwiczenia</title>
-</head>
-<body>
+    <title>{% block title %}Ćwiczenia{% endblock %}</title>
+{% endblock %}
+{% block body %}
 <div class="base-container">
     {% include("shared/navbar.html.twig") %}
     <main>
@@ -36,6 +34,4 @@
         </div>
     </main>
 </div>
-</body>
-
-</html>
+{% endblock %}

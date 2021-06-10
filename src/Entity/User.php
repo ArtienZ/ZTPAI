@@ -11,11 +11,11 @@ use Exception;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
+ * @ApiResource()
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="`user`")
  * @method string getUserIdentifier()
  */
-#[ApiResource]
 class User implements UserInterface,\Serializable
 {
     /**

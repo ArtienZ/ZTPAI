@@ -59,6 +59,10 @@ a{
 .menu>li>a:hover{
     color: rgba(57,169,255,255);
 }
+#menu_li:hover{
+    transition: none;
+    background-color: rgba(57,169,255,255);
+}
 .menu>button{
     padding: 9px 25px ;
     background-color: blue;

@@ -7,9 +7,9 @@ use App\Repository\TherapistRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @ApiResource()
  * @ORM\Entity(repositoryClass=TherapistRepository::class)
  */
-#[ApiResource]
 class Therapist
 {
     /**

@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
+{% extends 'base.html.twig' %}
+{% block head %}
     {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/login-form.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
         <script src="{{ asset('https://kit.fontawesome.com/34d5627880.js') }}" crossorigin="anonymous"></script>
     {% endblock %}
     <meta charset="UTF-8">
-    <title>Pacjenci</title>
-</head>
-<body>
+    <title>{% block title %}Lista Pacjentów{% endblock %}</title>
+{% endblock %}
+{% block body %}
 <div class="base-container">
     {% include("shared/navbar.html.twig") %}
     <main>
@@ -37,5 +37,4 @@
         </div>
     </main>
 </div>
-</body>
-</html>
+{% endblock %}
