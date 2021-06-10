@@ -1,5 +1,5 @@
-<html lang="pl">
-<head>
+{% extends 'base.html.twig' %}
+{% block head %}
     {% block stylesheets %}
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/main-page.css') }}">
@@ -9,8 +9,8 @@
     {% endblock %}
     <meta charset="UTF-8">
     <title>LogoMowa</title>
-</head>
-<body>
+{% endblock %}
+{% block body %}
 <form action="{{ path('login') }}" id="login_box_id" class="login_box" method="POST">
 
     <div class="login_container" id="login_container_id">
@@ -62,5 +62,4 @@
     </div>
 </main>
 </div>
-</body>
-</html>
+{% endblock %}

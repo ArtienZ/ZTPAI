@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -12,7 +13,9 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="`user`")
+ * @method string getUserIdentifier()
  */
+#[ApiResource]
 class User implements UserInterface,\Serializable
 {
     /**
@@ -232,5 +235,10 @@ class User implements UserInterface,\Serializable
             $this->photo,
             $this->role
             ) = unserialize($data, ['allowed_classes'=>false]);
+    }
+
+    public function __call($name, $arguments)
+    {
+        // TODO: Implement @method string getUserIdentifier()
     }
 }
