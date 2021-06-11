@@ -65,10 +65,22 @@ class User implements UserInterface,\Serializable
      */
     private $Exercises;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Kid::class, mappedBy="User_ID")
+     */
+    private $Kids_ID;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Therapist::class, mappedBy="User_ID", cascade={"persist", "remove"})
+     */
+    private $therapist;
+
+
     public function __construct()
     {
         $this->exercies_id = new ArrayCollection();
         $this->Exercises = new ArrayCollection();
+        $this->Kids_ID = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -241,4 +253,52 @@ class User implements UserInterface,\Serializable
     {
         // TODO: Implement @method string getUserIdentifier()
     }
+
+    /**
+     * @return Collection|Kid[]
+     */
+    public function getKidsID(): Collection
+    {
+        return $this->Kids_ID;
+    }
+
+    public function addKidsID(Kid $kidsID): self
+    {
+        if (!$this->Kids_ID->contains($kidsID)) {
+            $this->Kids_ID[] = $kidsID;
+            $kidsID->setUserID($this);
+        }
+
+        return $this;
+    }
+
+    public function removeKidsID(Kid $kidsID): self
+    {
+        if ($this->Kids_ID->removeElement($kidsID)) {
+            // set the owning side to null (unless already changed)
+            if ($kidsID->getUserID() === $this) {
+                $kidsID->setUserID(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getTherapist(): ?Therapist
+    {
+        return $this->therapist;
+    }
+
+    public function setTherapist(Therapist $therapist): self
+    {
+        // set the owning side of the relation if necessary
+        if ($therapist->getUserID() !== $this) {
+            $therapist->setUserID($this);
+        }
+
+        $this->therapist = $therapist;
+
+        return $this;
+    }
+
 }

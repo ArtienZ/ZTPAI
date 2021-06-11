@@ -1,0 +1,89 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    margin: 0 auto;
+}
+.profile-data{
+    width: 100%;
+}
+.add-user{
+    text-align: center;
+}
+.add-user label{
+    display: inline-block;
+    font-size: 1.5em;
+    width: 100%;
+    margin-top: 1em;
+}
+.add-user input,select,select>option{
+    text-align: center;
+    border-radius: 1em;
+    border: none;
+    line-height: 3em;
+    width: 80%;
+    margin-top: 0.5em;
+    font-size: 1em;
+    box-shadow: 2px 12px 12px #00000029;
+}
+[type="file"] {
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+
+}
+[type="file"] + label {
+    margin-top: 0.5em;
+    background: white;
+    box-shadow: 2px 12px 12px #00000029;
+    border-radius: 1em;
+    color: rgba(57,169,255,255);
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    line-height: 2em;
+}
+[type="file"]:focus + label,
+[type="file"] + label:hover {
+    background-color: rgba(57,169,255,255);
+    color: white;
+}
+
+[type="file"]:focus + label {
+    outline: 1px dotted #000;
+}
+.button-wrap{
+    width: 50%;
+    margin: 0 auto;
+}
+.button-wrap >label{
+    font-size: 3vh;
+}
+form>button{
+    background: white;
+    cursor: pointer;
+    color: rgba(57,169,255,255);
+    border-radius: 1em;
+    display: block;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+    width: 50%;
+    box-shadow: 2px 12px 12px #00000029;
+    margin: 1em auto;
+
+}
+form>button:hover{
+    background-color: rgba(57,169,255,255);
+    color: white;
+}

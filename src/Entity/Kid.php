@@ -44,17 +44,24 @@ class Kid
      */
     private $age;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="Kids_ID")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $User_ID;
+
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTherapist(): ?string
+    public function getTherapist(): ?Therapist
     {
         return $this->therapist;
     }
 
-    public function setTherapist(?string $therapist): self
+    public function setTherapist(Therapist $therapist): self
     {
         $this->therapist = $therapist;
 
@@ -108,4 +115,17 @@ class Kid
 
         return $this;
     }
+
+    public function getUserID(): ?User
+    {
+        return $this->User_ID;
+    }
+
+    public function setUserID(?User $User_ID): self
+    {
+        $this->User_ID = $User_ID;
+
+        return $this;
+    }
+
 }

@@ -3,30 +3,50 @@ security:
     encoders:
         App\Entity\User:
             algorithm: bcrypt
+        App\Entity\Kid:
+            algorithm: bcrypt
+
     providers:
         users_in_memory: { memory: null }
         my_provider:
             entity:
                 class: App\Entity\User
-                property: email
 
     firewalls:
+        login:
+            pattern: ^/login
+            stateless: true
+            anonymous: true
+            provider: my_provider
+            json_login:
+                check_path: /login
+                username_path: email
+                password_path: password
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
-            lazy: true
-            provider: users_in_memory
-            form_login:
-                login_path: login
-                check_path: login
+            pattern: ^/
                 provider: my_provider
-                default_target_path: /my_profile
-                always_use_default_target_path: true
-            logout:
-                path: /logout
-                target: /
+                stateless: true
+                anonymous: true
+                guard:
+                    authenticators:
+                    - lexik_jwt_authentication.jwt_token_authenticator
+#            anonymous: true
+#            lazy: true
+#            provider: users_in_memory
+#            form_login:
+#                login_path: login
+#                check_path: login
+#                provider: my_provider
+#                default_target_path: /my_profile
+#                always_use_default_target_path: true
+#            logout:
+#                path: /logout
+#                target: /
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

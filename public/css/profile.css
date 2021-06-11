@@ -1,4 +1,5 @@
 .profile-container{
+    font-family: "Roboto Light";
     display: flex;
     flex-direction: row;
     width: 60vw;

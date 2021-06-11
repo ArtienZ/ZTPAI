@@ -3,6 +3,7 @@
     {% block stylesheets %}
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/add_user.css') }}">
         <script src="{{ asset('https://kit.fontawesome.com/34d5627880.js') }}" crossorigin="anonymous"></script>
     {% endblock %}
     <meta charset="UTF-8">
@@ -15,7 +16,7 @@
     <main>
         <div class="profile-container">
             <div class="profile-data">
-                <form class="add-user">
+                <form class="add-user" id="add-kid-f">
                     {#
                     Form to add user entity
                     #}
@@ -37,15 +38,18 @@
                     {#
                     Add Therapist
                     #}
+                    {% if user_type=="therapist" %}
                     <label>Specjalizacja</label>
                     <input type="text" name="therapist_specialization" placeholder="Specjalizacja">
                     <label>Numer konta:</label>
                     <input type="text" name="therapist_account_number" placeholder="Numer konta">
                     <label>Stawka godzinowa:</label>
                     <input type="text" name="therapist_hourly_rate" placeholder="Stawka godzinowa(zł)">
+                    {% endif %}
                     {#
                     Add Kid
                     #}
+                    {% if user_type=="kid" %}
                     <label>Imie rodzica:</label>
                     <input type="text" name="kid_parent_name" placeholder="Imie">
                     <label>Nazwisko rodzica:</label>
@@ -61,6 +65,8 @@
                         <input type="file" id="upload-diag" name="kid-diagnosis">
                         <label class="file-button" for="upload-diag">Prześlij plik</label>
                     </div>
+                    {% endif %}
+                    <button type="submit">Dodaj</button>
                 </form>
             </div>
         </div>

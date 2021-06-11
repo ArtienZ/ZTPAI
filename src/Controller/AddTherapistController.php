@@ -14,6 +14,6 @@ class AddTherapistController extends AbstractController
      */
     public function add_therapist_page(): Response
     {
-        return $this->render("add_therapist.html.twig", ['name' => "User 1"]);
+        return $this->render("add_therapist.html.twig", ['user_type' => "kid"]);
     }
 }

@@ -34,6 +34,12 @@ class Therapist
      */
     private $hourly_rate;
 
+    /**
+     * @ORM\OneToOne(targetEntity=User::class, inversedBy="therapist", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $User_ID;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -71,6 +77,18 @@ class Therapist
     public function setHourlyRate(string $hourly_rate): self
     {
         $this->hourly_rate = $hourly_rate;
+
+        return $this;
+    }
+
+    public function getUserID(): ?User
+    {
+        return $this->User_ID;
+    }
+
+    public function setUserID(User $User_ID): self
+    {
+        $this->User_ID = $User_ID;
 
         return $this;
     }

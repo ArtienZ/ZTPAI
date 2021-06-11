@@ -6,7 +6,7 @@ use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class UserController extends AbstractController
 {
@@ -14,7 +14,7 @@ class UserController extends AbstractController
      * @Route("/user", name="user")
      */
 
-    public function index(UserPasswordEncoderInterface $encoder): Response
+    public function index(): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
         $user = new User();
@@ -22,8 +22,7 @@ class UserController extends AbstractController
         $user->setSurname("surname 1");
         $user->setEmail("user1@email.com");
         $plainPassword = "pass";
-        $encoded = $encoder->encodePassword($user,$plainPassword);
-        $user->setPassword($encoded);
+        $user->setPassword(password_hash($plainPassword,PASSWORD_BCRYPT));
         $user->setPhone("111222333");
         $user->setRole(1);
         $entityManager->persist($user);
